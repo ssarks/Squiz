@@ -11,3 +11,11 @@ quiz.prototype.getQuestionIndex = function() {
 quiz.prototype.isEnded = function() {
 	return this.questions.length === this.questionIndex;
 }
+
+quiz.prototype.guess = function(answer) {
+	this.questionIndex++;
+
+	if(this.getQuestionIndex().correctAnswer(answer)){
+		this.score++;
+	}
+};
